@@ -2,7 +2,10 @@ import {useState} from 'react'
 
 const Title = ({text}) => <h1><strong>{text}</strong></h1>
 
-const StatisticLine = ({text, value}) => <div>{text} : {value}</div>
+const StatisticLine = ({text, value}) => <tr>
+    <td>{text}</td>
+    <td>{value}</td>
+</tr>
 
 const Button = ({button}) => <button onClick={button.onClick}> {button.text} </button>
 
@@ -16,12 +19,16 @@ const Statistics = ({statistics}) => {
                 <p>No feedback given</p>
             ) : (
                 <>
-                    <StatisticLine text={statistics[0].text} value={statistics[0].value}/>
-                    <StatisticLine text={statistics[1].text} value={statistics[1].value}/>
-                    <StatisticLine text={statistics[2].text} value={statistics[2].value}/>
-                    <StatisticLine text={statistics[3].text} value={statistics[3].value}/>
-                    <StatisticLine text={statistics[4].text} value={statistics[4].value}/>
-                    <StatisticLine text={statistics[5].text} value={statistics[5].value}/>
+                    <table>
+                        <tbody>
+                        <StatisticLine text={statistics[0].text} value={statistics[0].value}/>
+                        <StatisticLine text={statistics[1].text} value={statistics[1].value}/>
+                        <StatisticLine text={statistics[2].text} value={statistics[2].value}/>
+                        <StatisticLine text={statistics[3].text} value={statistics[3].value}/>
+                        <StatisticLine text={statistics[4].text} value={statistics[4].value}/>
+                        <StatisticLine text={statistics[5].text} value={statistics[5].value}/>
+                        </tbody>
+                    </table>
                 </>
             )}
         </div>
