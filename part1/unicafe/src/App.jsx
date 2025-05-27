@@ -2,10 +2,11 @@ import {useState} from 'react'
 
 const Title = ({text}) => <h1><strong>{text}</strong></h1>
 
-const StatisticLine = ({text, value}) => <tr>
-    <td>{text}</td>
-    <td>{value}</td>
-</tr>
+const StatisticLine = ({text, value}) =>
+    <tr>
+        <td>{text}</td>
+        <td>{value}</td>
+    </tr>
 
 const Button = ({button}) => <button onClick={button.onClick}> {button.text} </button>
 
